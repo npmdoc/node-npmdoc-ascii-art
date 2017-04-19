@@ -1,0 +1,3618 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/khrome/ascii-art"
+
+    >ascii-art (v1.4.2)</a>
+</h1>
+<h4>Ansi codes, figlet fonts, and ascii art. 100% JS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art">module ascii-art</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">ascii-art.</span>alpha</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">ascii-art.</span>invert</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table">
+            function <span class="apidocSignatureSpan">ascii-art.</span>Table
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.artwork">
+            function <span class="apidocSignatureSpan">ascii-art.</span>artwork
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.font">
+            function <span class="apidocSignatureSpan">ascii-art.</span>font
+            <span class="apidocSignatureSpan">(str, fontName, style, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.image">
+            function <span class="apidocSignatureSpan">ascii-art.</span>image
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin">
+            function <span class="apidocSignatureSpan">ascii-art.</span>kaolin
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.strings">
+            function <span class="apidocSignatureSpan">ascii-art.</span>strings
+            <span class="apidocSignatureSpan">(strs, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.style">
+            function <span class="apidocSignatureSpan">ascii-art.</span>style
+            <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.table">
+            function <span class="apidocSignatureSpan">ascii-art.</span>table
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>Ansi</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>Figlet</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>Table.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>average</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>color</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.</span>valueScales</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ascii-art.</span>errorMode</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ascii-art.</span>fontPath</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ascii-art.</span>value</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.Ansi">module ascii-art.Ansi</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.Codes">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>Codes
+            <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.charAt">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>charAt
+            <span class="apidocSignatureSpan">(str, index, includePrefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.codes">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>codes
+            <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.intersect">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>intersect
+            <span class="apidocSignatureSpan">(background, overlay, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.length">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>length
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.map">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>map
+            <span class="apidocSignatureSpan">(value, handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.setInstance">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>setInstance
+            <span class="apidocSignatureSpan">(art)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Ansi.trimTo">
+            function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>trimTo
+            <span class="apidocSignatureSpan">(value, length)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.Figlet">module ascii-art.Figlet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet._parseFont">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>_parseFont
+            <span class="apidocSignatureSpan">(name, defn, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.loadFont">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>loadFont
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.parseChar">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>parseChar
+            <span class="apidocSignatureSpan">(char, font)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.parseFont">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>parseFont
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.preloadDirectory">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>preloadDirectory
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.setInstance">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>setInstance
+            <span class="apidocSignatureSpan">(art)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Figlet.write">
+            function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>write
+            <span class="apidocSignatureSpan">(str, fontName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ascii-art.Figlet.</span>fonts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ascii-art.Figlet.</span>fontPath</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.Table">module ascii-art.Table</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.Table">
+            function <span class="apidocSignatureSpan">ascii-art.</span>Table
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.setInstance">
+            function <span class="apidocSignatureSpan">ascii-art.Table.</span>setInstance
+            <span class="apidocSignatureSpan">(art)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.Table.prototype">module ascii-art.Table.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.add">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>add
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.addColumn">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>addColumn
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.addRow">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>addRow
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.setHeading">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>setHeading
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.toString">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.Table.prototype.write">
+            function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>write
+            <span class="apidocSignatureSpan">(width)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.average">module ascii-art.average</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.average.render">
+            function <span class="apidocSignatureSpan">ascii-art.average.</span>render
+            <span class="apidocSignatureSpan">(image, utils, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.average.setInstance">
+            function <span class="apidocSignatureSpan">ascii-art.average.</span>setInstance
+            <span class="apidocSignatureSpan">(instance)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.kaolin">module ascii-art.kaolin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.kaolin">
+            function <span class="apidocSignatureSpan">ascii-art.</span>kaolin
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgBlack">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgBlack
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgBlue">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgBlue
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgCyan">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgCyan
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgGreen">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgGreen
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgMagenta">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgMagenta
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgRed">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgRed
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgWhite">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgWhite
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bgYellow">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgYellow
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.black">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>black
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.blue">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>blue
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.bold">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bold
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.cyan">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>cyan
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.dim">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>dim
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.gray">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>gray
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.green">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>green
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.grey">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>grey
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.hidden">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>hidden
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.inverse">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>inverse
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.italic">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>italic
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.magenta">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>magenta
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.red">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>red
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.reset">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>reset
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.strikethrough">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>strikethrough
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.underline">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>underline
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.white">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>white
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.kaolin.yellow">
+            function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>yellow
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ascii-art.table">module ascii-art.table</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ascii-art.table.Table">
+            function <span class="apidocSignatureSpan">ascii-art.table.</span>Table
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art" id="apidoc.module.ascii-art">module ascii-art</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table" id="apidoc.element.ascii-art.Table">
+        function <span class="apidocSignatureSpan">ascii-art.</span>Table
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Table = function (options){
+    this.options = options || {};
+    var ob = this;
+    if(this.options.bars){
+        if(this.options.bars === true) this.options.bars = &#x27;single&#x27;;
+        if(typeof this.options.bars == &#x27;string&#x27;) switch(this.options.bars){
+            case &#x27;single&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;┏&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;┓&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;┛&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;┗&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;┻&#x27;,
+                    &#x27;top_t&#x27; : &#x27;┳&#x27;,
+                    &#x27;right_t&#x27; : &#x27;┫&#x27;,
+                    &#x27;left_t&#x27; : &#x27;┣&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╋&#x27;,
+                    &#x27;vertical&#x27; : &#x27;┃&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;━&#x27;,
+                };
+                break;
+            case &#x27;double&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;╔&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;╗&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;╝&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;╚&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;╩&#x27;,
+                    &#x27;top_t&#x27; : &#x27;╦&#x27;,
+                    &#x27;right_t&#x27; : &#x27;╣&#x27;,
+                    &#x27;left_t&#x27; : &#x27;╠&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╬&#x27;,
+                    &#x27;vertical&#x27; : &#x27;║&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;═&#x27;,
+                };
+                break;
+            case &#x27;block&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;█&#x27;,
+                    &#x27;top_t&#x27; : &#x27;█&#x27;,
+                    &#x27;right_t&#x27; : &#x27;█&#x27;,
+                    &#x27;left_t&#x27; : &#x27;█&#x27;,
+                    &#x27;intersection&#x27; : &#x27;█&#x27;,
+                    &#x27;vertical&#x27; : &#x27;█&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;█&#x27;,
+                };
+                break;
+            case &#x27;angles&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;◤&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;◥&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;◢&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;◣&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;▲&#x27;,
+                    &#x27;top_t&#x27; : &#x27;▼&#x27;,
+                    &#x27;right_t&#x27; : &#x27;◀&#x27;,
+                    &#x27;left_t&#x27; : &#x27;▶&#x27;,
+                    &#x27;intersection&#x27; : &#x27;◆&#x27;,
+                    &#x27;vertical&#x27; : &#x27; &#x27;,
+                    &#x27;horizontal&#x27; : &#x27; &#x27;,
+                };
+                break;
+        }
+        var bars = this.options.bars;
+        this.getBoundaryChar = function(t, l, b, r){
+            if(t &#x26;&#x26; l &#x26;&#x26; b &#x26;&#x26; r) return bars.intersection;
+            //Ts
+            if(t &#x26;&#x26; l &#x26;&#x26; b) return bars.right_t;
+            if(t &#x26;&#x26; l &#x26;&#x26; r) return bars.bottom_t;
+            if(t &#x26;&#x26; b &#x26;&#x26; r) return bars.left_t;
+            if(l &#x26;&#x26; b &#x26;&#x26; r) return bars.top_t;
+
+            //Corners
+            if(l &#x26;&#x26; b) return bars.ur_corner;
+            if(t &#x26;&#x26; l) return bars.lr_corner;
+            if(t &#x26;&#x26; r) return bars.ll_corner;
+            if(b &#x26;&#x26; r) return bars.ul_corner;
+
+            //Straights
+            if(l &#x26;&#x26; r) return bars.horizontal;
+            if(t &#x26;&#x26; b) return bars.vertical;
+        }
+    }else{
+        if(!this.options.verticalBar) this.options.verticalBar = &#x27;|&#x27;;
+        if(!this.options.horizontalBar) this.options.horizontalBar = &#x27;-&#x27;;
+        if(!this.options.intersection) this.options.intersection = &#x27;+&#x27;;
+        this.getBoundaryChar = function(t, l, b, r){
+            var isVert = (t || b);
+            var isHoriz = (l || r);
+            if(isVert &#x26;&#x26; isHoriz){
+                return ob.options.intersection;
+            }else{
+                if(isVert) return ob.options.verticalBar;
+                if(isHoriz) return ob.options.horizontalBar;
+            }
+        }
+    }
+    this.headers = [];
+    this.data = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[
+    &#x27;intersection&#x27;, &#x27;horizontalBar&#x27;, &#x27;verticalBar&#x27;,
+    &#x27;dataStyle&#x27;, &#x27;headerStyle&#x27;, &#x27;bars&#x27;, &#x27;cellStyle&#x27;,
+    &#x27;borderColor&#x27;
+].forEach(function(opt){
+    opts[opt] = item[opt];
+})
+var table = new AsciiArt.<span class="apidocCodeKeywordSpan">Table</span>(opts);
+var fields = item.columns ||
+   Object.keys(item.data[0]||{});
+table.setHeading.apply(table, fields);
+table.data = item.data;
+var res = table.write(
+    item.width ||
+    (
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.artwork" id="apidoc.element.ascii-art.artwork">
+        function <span class="apidocSignatureSpan">ascii-art.</span>artwork
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">artwork = function (options, callback){
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.image(options);
+    }else{
+        getTextFile(options.artwork, function(err, artwork){
+            callback(artwork);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Artwork
+-------
+
+fetch a graphic from a remote source and append it to the current buffer.
+
+| In your code                                    |         In the Terminal                           |
+|-------------------------------------------------|---------------------------------------------------|
+| `.<span class="apidocCodeKeywordSpan">artwork</span>(options[, callback])`                 | ascii-art art [source][/path]            |
+
+Often I use this in conjunction with an image backdrop, for example to superimpose bones on the earth:
+
+![Mixed Content Example](http://patternweaver.com/Github/Ascii/docs/bones_earth.png)
+
+
+Compositing
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.font" id="apidoc.element.ascii-art.font">
+        function <span class="apidocSignatureSpan">ascii-art.</span>font
+        <span class="apidocSignatureSpan">(str, fontName, style, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">font = function (str, fontName, style, callback){
+    if(typeof style == &#x27;function&#x27; &#x26;&#x26; !callback){
+        callback = style;
+        style = undefined;
+    }
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.font(str, fontName, style);
+    }else{
+        return AsciiArt.Figlet.write(str, fontName, function(text){
+            if(style) text = AsciiArt.Ansi.Codes(text, style, true);
+            callback(text);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fonts
+-----
+
+Render a string using a figlet font and add that to the buffer. There is a batch version of this function which does not chain and
+ takes an array( `.strings()`).
+
+| In your code                                    |         In the Terminal                           |
+|-------------------------------------------------|---------------------------------------------------|
+| `.<span class="apidocCodeKeywordSpan">font</span>(text, font[, style][, callback])`    | `ascii-art text -F &#x3c;font&#x3e; &#
+x22;Demo!&#x22;`             |
+
+Outputs
+
+	______                          _
+	|  _  \                        | |
+	| | | |  ___  _ __ ___    ___  | |
+	| | | | / _ \| &#x27;_ ` _ \  / _ \ | |
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.image" id="apidoc.element.ascii-art.image">
+        function <span class="apidocSignatureSpan">ascii-art.</span>image
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">image = function (options, callback){
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.image(options);
+    }else{
+        var image = new AsciiArt.Image(options);
+        image.write(function(err, text){
+            callback(text);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Installation
+------------
+
+	npm install ascii-art
+
+If you&#x27;d like to use the command-line tool make sure to use `-g`
+
+If you want to use `.<span class="apidocCodeKeywordSpan">image</span>()` or `.Image` you must install [`canvas`](https://www.npmjs
+.com/package/canvas) and if you want to run the chalk tests... you&#x27;ll need to to install `require-uncached` as well.
+
+
+Styles
+------
+
+Add ANSI styles to a string and return the result.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin" id="apidoc.element.ascii-art.kaolin">
+        function <span class="apidocSignatureSpan">ascii-art.</span>kaolin
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kaolin = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.strings" id="apidoc.element.ascii-art.strings">
+        function <span class="apidocSignatureSpan">ascii-art.</span>strings
+        <span class="apidocSignatureSpan">(strs, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strings = function (strs, options, callback){
+    if(typeof options == &#x27;string&#x27;) options = {font:options};
+    var jobs = 0;
+    var results = [];
+    function checkComplete(){
+        jobs--;
+        if(jobs == 0) callback.apply(callback, results);
+    }
+    strs.forEach(function(str, index){
+        jobs++;
+        AsciiArt.font(str, options.font, options.style, function(rendered){
+            results[index] = rendered;
+            checkComplete();
+        })
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+| white   |![color](Images/c/gray.png)|![color](Images/c/light_gray.png)|![color](Images/c/gray.png)|![color](Images/c/light_gray
+.png)|
+
+For example: if I wanted underlined blue text on a white background, my style would be `underlined+blue+white_bg`. Check out the
+ detailed [style docs](docs/Styles.md) for more information.
+
+Fonts
+-----
+
+Render a string using a figlet font and add that to the buffer. There is a batch version of this function which does not chain and
+ takes an array( `.<span class="apidocCodeKeywordSpan">strings</span>()`).
+
+| In your code                                    |         In the Terminal                           |
+|-------------------------------------------------|---------------------------------------------------|
+| `.font(text, font[, style][, callback])`    | `ascii-art text -F &#x3c;font&#x3e; &#x22;Demo!&#x22;`             |
+
+Outputs
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.style" id="apidoc.element.ascii-art.style">
+        function <span class="apidocSignatureSpan">ascii-art.</span>style
+        <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">style = function (str, color, forceOff) {
+    if(!color) return str;
+    var color_attrs = color.split(&#x22;+&#x22;);
+    var ansi_str = &#x22;&#x22;;
+    for(var i=0, attr; attr = color_attrs[i]; i++) {
+        ansi_str += codes[attr];
+    }
+    ansi_str += str;
+    if(forceOff) ansi_str += codes[&#x22;off&#x22;];
+    return ansi_str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Styles
+------
+
+Add ANSI styles to a string and return the result.
+
+| In your code                                    |         In the Terminal                           |
+|-------------------------------------------------|---------------------------------------------------|
+| `.<span class="apidocCodeKeywordSpan">style</span>(text, style[, close]) &#x3e; String`          | `ascii-art text -s green &#
+x22;some text&#x22;`             |
+
+Styles are: *italic*, **bold**, &#x3c;span style=&#x22;text-decoration: underline&#x22;&#x3e;underline&#x3c;/span&#x3e;, &#x3c;span
+ style=&#x22;text-decoration: underline overline&#x22;&#x3e;|framed|&#x3c;/span&#x3e;, &#x3c;span style=&#x22;text-decoration: underline
+ overline&#x22;&#x3e;|encircled|&#x3c;/span&#x3e;, &#x3c;span style=&#x22;text-decoration: overline&#x22;&#x3e;overline&#x3c;/span
+&#x3e;, &#x3c;span style=&#x22;text-decoration: blink&#x22;&#x3e;blink&#x3c;/span&#x3e; and &#x3c;span style=&#x22;display:inline
+-block; background-color:#777777; color: white&#x22;&#x3e;&#x26;nbsp;inverse&#x26;nbsp;&#x3c;/span&#x3e;. And available colors are
+:
+
+| **Color Table**  | `color`       | bright_`color`  | `color`_bg| bright_`color`_bg|
+| -----------------|---------------|-----------------|-----------|------------------|
+| black   |![color](Images/c/black.png)|![color](Images/c/light_black.png)|![color](Images/c/black.png)|![color](Images/c/light_black
+.png)|
+| red     |![color](Images/c/red.png)|![color](Images/c/light_red.png)|![color](Images/c/red.png)|![color](Images/c/light_red.png
+)|
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.table" id="apidoc.element.ascii-art.table">
+        function <span class="apidocSignatureSpan">ascii-art.</span>table
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">table = function (options, callback){
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.table(options);
+    }else{
+        var opts = {};
+        [
+            &#x27;intersection&#x27;, &#x27;horizontalBar&#x27;, &#x27;verticalBar&#x27;,
+            &#x27;dataStyle&#x27;, &#x27;headerStyle&#x27;, &#x27;bars&#x27;, &#x27;cellStyle&#x27;,
+            &#x27;borderColor&#x27;
+        ].forEach(function(opt){
+            opts[opt] = options[opt];
+        })
+        var table = new AsciiArt.Table(opts);
+        var fields = options.columns || Object.keys(options.data[0] ||{});
+        table.setHeading.apply(table, fields);
+        table.data = options.data;
+        var result = table.write(
+            options.width ||
+            (
+                process &#x26;&#x26;
+                process.stdout &#x26;&#x26;
+                process.stdout.columns
+            ) || 80
+        );
+        callback(result);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Tables
+------
+
+Generate a table from the passed data, with support for many styles and append that to the buffer
+
+| In your code                                    |         In the Terminal                           |
+|-------------------------------------------------|---------------------------------------------------|
+| `.<span class="apidocCodeKeywordSpan">table</span>(options[, callback])`                   | N/A             |
+
+![Styled Table Example](http://patternweaver.com/Github/Ascii/docs/ansi_table.png)
+
+Check out the [documentation](docs/Tables.md) for more examples!
+
+Artwork
+-------
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.Ansi" id="apidoc.module.ascii-art.Ansi">module ascii-art.Ansi</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.Codes" id="apidoc.element.ascii-art.Ansi.Codes">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>Codes
+        <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Codes = function (str, color, forceOff) {
+    if(!color) return str;
+    var color_attrs = color.split(&#x22;+&#x22;);
+    var ansi_str = &#x22;&#x22;;
+    for(var i=0, attr; attr = color_attrs[i]; i++) {
+        ansi_str += codes[attr];
+    }
+    ansi_str += str;
+    if(forceOff) ansi_str += codes[&#x22;off&#x22;];
+    return ansi_str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var combine = function(blockOne, blockTwo, style){
+    var linesOne = blockOne.split(&#x22;\n&#x22;);
+    var linesTwo = blockTwo.split(&#x22;\n&#x22;);
+    var diff = Math.max(linesOne.length - linesTwo.length, 0);
+    linesOne.forEach(function(line, index){
+        if(index &#x3e;= diff){
+            if(style){
+                linesOne[index] = linesOne[index]+AsciiArt.Ansi.<span class="apidocCodeKeywordSpan">Codes</span>(linesTwo[index-
+diff], style, true);
+            }else{
+                linesOne[index] = linesOne[index]+linesTwo[index-diff];
+            }
+        }
+    });
+    return linesOne.join(&#x22;\n&#x22;);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.charAt" id="apidoc.element.ascii-art.Ansi.charAt">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>charAt
+        <span class="apidocSignatureSpan">(str, index, includePrefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">charAt = function (str, index, includePrefix){
+    var result;
+    var previousCharPos;
+    AsciiArt.Ansi.map(str, function(row, column, chr, pos, done){
+        if(index == column){
+            if(includePrefix &#x26;&#x26; previousCharPos !== undefined){
+                var prefix = background.substring(previousCharPos, pos-1);
+                result = prefix+chr;
+            }else result = chr;
+            return done();
+        }
+        previousCharPos = pos;
+    });
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        //x in-range
+        column &#x3e;= x &#x26;&#x26;
+        column &#x3c;= x + lines[row-y].length
+    ){
+        if(lines[row-y][column-x-1] === undefined) return;
+        if(options.transparent &#x26;&#x26; lines[row-y][column-x-1] === &#x27; &#x27;) return;
+        if(options.style) return AsciiArt.style(
+            AsciiArt.Ansi.<span class="apidocCodeKeywordSpan">charAt</span>(lines[row-y], column-x)
+        , options.style);
+        else return AsciiArt.Ansi.charAt(lines[row-y], column-x)
+    }
+});
+if(options.chroma){
+    str = str.replace(new RegExp(options.chroma, &#x27;g&#x27;), &#x27; &#x27;);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.codes" id="apidoc.element.ascii-art.Ansi.codes">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>codes
+        <span class="apidocSignatureSpan">(str, color, forceOff)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">codes = function (str, color, forceOff) {
+    if(!color) return str;
+    var color_attrs = color.split(&#x22;+&#x22;);
+    var ansi_str = &#x22;&#x22;;
+    for(var i=0, attr; attr = color_attrs[i]; i++) {
+        ansi_str += codes[attr];
+    }
+    ansi_str += str;
+    if(forceOff) ansi_str += codes[&#x22;off&#x22;];
+    return ansi_str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        ansi_str += codes[attr];
+    }
+    ansi_str += str;
+    if(forceOff) ansi_str += codes[&#x22;off&#x22;];
+    return ansi_str;
+};
+
+//will probably migrate to .<span class="apidocCodeKeywordSpan">codes</span>()
+AsciiArt.Ansi.codes = AsciiArt.Ansi.Codes;
+
+AsciiArt.Ansi.setInstance = function(art){
+    parentArt = art;
+}
+
+return AsciiArt;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.intersect" id="apidoc.element.ascii-art.Ansi.intersect">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>intersect
+        <span class="apidocSignatureSpan">(background, overlay, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersect = function (background, overlay, options){
+    var x = options.x || 0;
+    var y = options.y || 0;
+    var lines = overlay.split(&#x22;\n&#x22;);
+    var bgLines = background.split(&#x22;\n&#x22;);
+    //var lineWidth =AsciiArt.ansi.length()
+    //console.log(&#x27;$$$&#x27;, bgLines[0].length, lines[0].length, y)
+    if(y &#x3c; 0) y = (bgLines.length - lines.length) + y+1;
+    if(x &#x3c; 0) x = (AsciiArt.Ansi.length(bgLines[0]) - AsciiArt.Ansi.length(lines[0])) + x+1;
+    var str = AsciiArt.Ansi.map(background, function(row, column, chr, pos, done){
+        //if(options.y &#x3c; 0) y = (bgLines[0].length - lines[row-y].length) + options.y;
+        //short circuit
+        if(row &#x3e; y + lines.length-1) return done();
+        if(
+            //y in-range
+            row &#x3e;= y &#x26;&#x26;
+            //x in-range
+            column &#x3e;= x &#x26;&#x26;
+            column &#x3c;= x + lines[row-y].length
+        ){
+            if(lines[row-y][column-x-1] === undefined) return;
+            if(options.transparent &#x26;&#x26; lines[row-y][column-x-1] === &#x27; &#x27;) return;
+            if(options.style) return AsciiArt.style(
+                AsciiArt.Ansi.charAt(lines[row-y], column-x)
+            , options.style);
+            else return AsciiArt.Ansi.charAt(lines[row-y], column-x)
+        }
+    });
+    if(options.chroma){
+        str = str.replace(new RegExp(options.chroma, &#x27;g&#x27;), &#x27; &#x27;);
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            result.split(&#x22;\n&#x22;).slice( item.start || 0, item.stop)
+        ).join(&#x22;\n&#x22;);
+        done();
+    }, 1);
+   break;
+case &#x27;overlay&#x27;:
+    setTimeout(function(){
+        var overlaid = AsciiArt.Ansi.<span class="apidocCodeKeywordSpan">intersect</span>(
+            result, item.text, item
+        );
+        if(overlaid) result = overlaid;
+        done();
+    }, 1);
+   break;
+case &#x27;font&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.length" id="apidoc.element.ascii-art.Ansi.length">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>length
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">length = function (value){
+    var count = 0;
+    AsciiArt.Ansi.map(value, function(row, column, chr, pos, done){
+        count++;
+    });
+    return count;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return result;
+},
+intersect :function(background, overlay, options){
+    var x = options.x || 0;
+    var y = options.y || 0;
+    var lines = overlay.split(&#x22;\n&#x22;);
+    var bgLines = background.split(&#x22;\n&#x22;);
+    //var lineWidth =AsciiArt.ansi.<span class="apidocCodeKeywordSpan">length</span>()
+    //console.log(&#x27;$$$&#x27;, bgLines[0].length, lines[0].length, y)
+    if(y &#x3c; 0) y = (bgLines.length - lines.length) + y+1;
+    if(x &#x3c; 0) x = (AsciiArt.Ansi.length(bgLines[0]) - AsciiArt.Ansi.length(lines[0])) + x+1;
+    var str = AsciiArt.Ansi.map(background, function(row, column, chr, pos, done){
+        //if(options.y &#x3c; 0) y = (bgLines[0].length - lines[row-y].length) + options.y;
+        //short circuit
+        if(row &#x3e; y + lines.length-1) return done();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.map" id="apidoc.element.ascii-art.Ansi.map">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>map
+        <span class="apidocSignatureSpan">(value, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (value, handler){
+    var lcv = 0;
+    var result = &#x27;&#x27;;
+    var inEscape = false;
+    var lines = value.split(&#x22;\n&#x22;);
+    var shortcircuit = false;
+    for(var lineNumber=0; lineNumber &#x3c; lines.length; lineNumber++){
+        if(shortcircuit) continue;
+        var line = lines[lineNumber];
+        var pos = 0;
+        for(var lcv=0; lcv &#x3c; line.length; lcv++){
+            if(shortcircuit) continue;
+            if(inEscape){
+                if(line[lcv] == &#x27;m&#x27;){
+                    inEscape = false;
+                }
+            }else{
+                if(line[lcv] == &#x27;\033&#x27; &#x26;&#x26; line[lcv+1] == &#x27;[&#x27;){
+                    inEscape = true;
+                    lcv++;
+                    continue;
+                }
+                pos++;
+                var value = handler(lineNumber, pos, line[lcv], lcv, function(){
+                    shortcircuit = true;
+                });
+                if(value != undefined){
+                    //increment by the length of all the extra chars attached to this value
+                    var a = line.substring(0, lcv-1)+value+line.substring(lcv+1);
+                    lcv += value.length-2;
+                    line = a;
+                }
+            }
+        }
+        lines[lineNumber] = line;
+    }
+    return lines.join(&#x22;\n&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}(this, function(){
+var AsciiArt = {};
+var parentArt;
+
+AsciiArt.Ansi = {
+    length:function(value){
+        var count = 0;
+        AsciiArt.Ansi.<span class="apidocCodeKeywordSpan">map</span>(value, function(row, column, chr, pos, done){
+            count++;
+        });
+        return count;
+    },
+    trimTo :function(value, length){
+        var lcv = 0;
+        var result = &#x27;&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.setInstance" id="apidoc.element.ascii-art.Ansi.setInstance">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>setInstance
+        <span class="apidocSignatureSpan">(art)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setInstance = function (art){
+    parentArt = art;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+//lazy load subreferences
+function proxyOnFirstReference(name){
+    Object.defineProperty(AsciiArt, name, {
+        get: function() {
+            result = get[name]()[name];
+            result.<span class="apidocCodeKeywordSpan">setInstance</span>(AsciiArt);
+            AsciiArt[name] = result;
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Ansi.trimTo" id="apidoc.element.ascii-art.Ansi.trimTo">
+        function <span class="apidocSignatureSpan">ascii-art.Ansi.</span>trimTo
+        <span class="apidocSignatureSpan">(value, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimTo = function (value, length){
+    var lcv = 0;
+    var result = &#x27;&#x27;;
+    var inEscape = false;
+    var fuse = length;
+    while(lcv &#x3c; value.length){
+        if(inEscape){
+            //todo: strict (enforce numeric)
+            result += value[lcv];
+            if(value[lcv] == &#x27;m&#x27;){
+                inEscape = false;
+            }
+        }else{
+            if(value[lcv] == &#x27;\033&#x27; &#x26;&#x26; value[lcv+1] == &#x27;[&#x27;){
+                inEscape = true;
+                result += &#x27;\033[&#x27;;
+                lcv++;
+            }else{
+                if(fuse &#x3e; 0){
+                    result += value[lcv];
+                    fuse--;
+                }
+            }
+        }
+        lcv++;
+    }
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var ansiAwareLength = function(value){
+    return parentArt.Ansi.length(value);
+}
+
+var ansiAwareTrimTo = function(value, length){
+    return parentArt.Ansi.<span class="apidocCodeKeywordSpan">trimTo</span>(value, length);
+}
+
+var defaultChar = &#x27; &#x27;;
+
+function padRTo(text, width, padChar) {
+    padChar = padChar || defaultChar;
+    text = text + &#x27;&#x27;;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.Figlet" id="apidoc.module.ascii-art.Figlet">module ascii-art.Figlet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet._parseFont" id="apidoc.element.ascii-art.Figlet._parseFont">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>_parseFont
+        <span class="apidocSignatureSpan">(name, defn, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parseFont = function (name, defn, fn) {
+    var lines = defn.split(&#x22;\n&#x22;);
+    var header = lines[0].split(&#x22; &#x22;);
+    var hardblank = header[0].charAt(header[0].length - 1);
+    var height = +header[1];
+    var comments = +header[5];
+    var font = {
+        defn: lines.slice(comments + 1),
+        hardblank: hardblank,
+        height: height,
+        char: {}
+    };
+    fn(font);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// if that ever makes it to NPM, it will become a dependency
+AsciiArt.Figlet = {
+    fonts: {},
+    fontPath : __dirname+&#x27;/Fonts/&#x27;,
+    parseFont: function(name, fn) {
+        if (AsciiArt.Figlet.fonts[name]) fn(AsciiArt.Figlet.fonts[name]);
+        else AsciiArt.Figlet.loadFont(name, function(defn){
+            AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">_parseFont</span>(name, defn, function(font){
+                AsciiArt.Figlet.fonts[name] = font;
+                fn(font);
+            });
+        });
+    },
+    _parseFont: function(name, defn, fn) {
+        var lines = defn.split(&#x22;\n&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.loadFont" id="apidoc.element.ascii-art.Figlet.loadFont">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>loadFont
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFont = function (name, fn) {
+    //var fs = require(&#x27;fs&#x27;);
+    var fileName = this.fontPath + name+ &#x27;.flf&#x27;;
+    fs.readFile(fileName, &#x27;utf8&#x27;, function(error, data) {
+        if(error) throw(error);
+        if(data) fn(data);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// this code originates with http://github.com/scottgonzalez/figlet-js
+// if that ever makes it to NPM, it will become a dependency
+AsciiArt.Figlet = {
+    fonts: {},
+    fontPath : __dirname+&#x27;/Fonts/&#x27;,
+    parseFont: function(name, fn) {
+        if (AsciiArt.Figlet.fonts[name]) fn(AsciiArt.Figlet.fonts[name]);
+        else AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">loadFont</span>(name, function(defn){
+            AsciiArt.Figlet._parseFont(name, defn, function(font){
+                AsciiArt.Figlet.fonts[name] = font;
+                fn(font);
+            });
+        });
+    },
+    _parseFont: function(name, defn, fn) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.parseChar" id="apidoc.element.ascii-art.Figlet.parseChar">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>parseChar
+        <span class="apidocSignatureSpan">(char, font)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseChar = function (char, font) {
+    if(char &#x3e; 122) return;
+    if (char in font.char) return font.char[char];
+    var height = font.height,
+        start = (char - 32) * height,
+        charDefn = [],
+        i;
+    for (i = 0; i &#x3c; height; i++) {
+        if(!font.defn[start + i]) return;
+        charDefn[i] = font.defn[start + i].replace(/@/g, &#x22;&#x22;)
+        .replace(RegExp(&#x22;\\&#x22; + font.hardblank, &#x22;g&#x22;), &#x22; &#x22;);
+    }
+    return font.char[char] = charDefn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //todo
+},
+write : function(str, fontName, callback) {
+    AsciiArt.Figlet.parseFont(fontName, function(font){
+        var chars = {},
+        result = &#x22;&#x22;;
+        for (var i = 0, len = str.length; i &#x3c; len; i++) {
+            chars[i] = AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">parseChar</span>(str.charCodeAt(i), font);
+        }
+        for (var i = 0, height = chars[0].length; i &#x3c; height; i++) {
+            for (var j = 0; j &#x3c; len; j++) {
+                if(chars[j]) result += chars[j][i];
+            }
+            result += &#x22;\n&#x22;;
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.parseFont" id="apidoc.element.ascii-art.Figlet.parseFont">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>parseFont
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFont = function (name, fn) {
+    if (AsciiArt.Figlet.fonts[name]) fn(AsciiArt.Figlet.fonts[name]);
+    else AsciiArt.Figlet.loadFont(name, function(defn){
+        AsciiArt.Figlet._parseFont(name, defn, function(font){
+            AsciiArt.Figlet.fonts[name] = font;
+            fn(font);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if(data) fn(data);
+    });
+},
+preloadDirectory : function(path, callback){
+    //todo
+},
+write : function(str, fontName, callback) {
+    AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">parseFont</span>(fontName, function(font){
+        var chars = {},
+        result = &#x22;&#x22;;
+        for (var i = 0, len = str.length; i &#x3c; len; i++) {
+            chars[i] = AsciiArt.Figlet.parseChar(str.charCodeAt(i), font);
+        }
+        for (var i = 0, height = chars[0].length; i &#x3c; height; i++) {
+            for (var j = 0; j &#x3c; len; j++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.preloadDirectory" id="apidoc.element.ascii-art.Figlet.preloadDirectory">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>preloadDirectory
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">preloadDirectory = function (path, callback){
+    //todo
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.setInstance" id="apidoc.element.ascii-art.Figlet.setInstance">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>setInstance
+        <span class="apidocSignatureSpan">(art)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setInstance = function (art){
+    parentArt = art;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+//lazy load subreferences
+function proxyOnFirstReference(name){
+    Object.defineProperty(AsciiArt, name, {
+        get: function() {
+            result = get[name]()[name];
+            result.<span class="apidocCodeKeywordSpan">setInstance</span>(AsciiArt);
+            AsciiArt[name] = result;
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Figlet.write" id="apidoc.element.ascii-art.Figlet.write">
+        function <span class="apidocSignatureSpan">ascii-art.Figlet.</span>write
+        <span class="apidocSignatureSpan">(str, fontName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (str, fontName, callback) {
+    AsciiArt.Figlet.parseFont(fontName, function(font){
+        var chars = {},
+        result = &#x22;&#x22;;
+        for (var i = 0, len = str.length; i &#x3c; len; i++) {
+            chars[i] = AsciiArt.Figlet.parseChar(str.charCodeAt(i), font);
+        }
+        for (var i = 0, height = chars[0].length; i &#x3c; height; i++) {
+            for (var j = 0; j &#x3c; len; j++) {
+                if(chars[j]) result += chars[j][i];
+            }
+            result += &#x22;\n&#x22;;
+        }
+        callback(result, font);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            result, item.text, item
+        );
+        if(overlaid) result = overlaid;
+        done();
+    }, 1);
+   break;
+case &#x27;font&#x27;:
+    AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">write</span>(item.text, item.font, function(text){
+        result = safeCombine(result, text, item.style);
+        done();
+    });
+    break;
+case &#x27;table&#x27;:
+    setTimeout(function(){
+        var opts = {};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.Table" id="apidoc.module.ascii-art.Table">module ascii-art.Table</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.Table" id="apidoc.element.ascii-art.Table.Table">
+        function <span class="apidocSignatureSpan">ascii-art.</span>Table
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Table = function (options){
+    this.options = options || {};
+    var ob = this;
+    if(this.options.bars){
+        if(this.options.bars === true) this.options.bars = &#x27;single&#x27;;
+        if(typeof this.options.bars == &#x27;string&#x27;) switch(this.options.bars){
+            case &#x27;single&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;┏&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;┓&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;┛&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;┗&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;┻&#x27;,
+                    &#x27;top_t&#x27; : &#x27;┳&#x27;,
+                    &#x27;right_t&#x27; : &#x27;┫&#x27;,
+                    &#x27;left_t&#x27; : &#x27;┣&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╋&#x27;,
+                    &#x27;vertical&#x27; : &#x27;┃&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;━&#x27;,
+                };
+                break;
+            case &#x27;double&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;╔&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;╗&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;╝&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;╚&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;╩&#x27;,
+                    &#x27;top_t&#x27; : &#x27;╦&#x27;,
+                    &#x27;right_t&#x27; : &#x27;╣&#x27;,
+                    &#x27;left_t&#x27; : &#x27;╠&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╬&#x27;,
+                    &#x27;vertical&#x27; : &#x27;║&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;═&#x27;,
+                };
+                break;
+            case &#x27;block&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;█&#x27;,
+                    &#x27;top_t&#x27; : &#x27;█&#x27;,
+                    &#x27;right_t&#x27; : &#x27;█&#x27;,
+                    &#x27;left_t&#x27; : &#x27;█&#x27;,
+                    &#x27;intersection&#x27; : &#x27;█&#x27;,
+                    &#x27;vertical&#x27; : &#x27;█&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;█&#x27;,
+                };
+                break;
+            case &#x27;angles&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;◤&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;◥&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;◢&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;◣&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;▲&#x27;,
+                    &#x27;top_t&#x27; : &#x27;▼&#x27;,
+                    &#x27;right_t&#x27; : &#x27;◀&#x27;,
+                    &#x27;left_t&#x27; : &#x27;▶&#x27;,
+                    &#x27;intersection&#x27; : &#x27;◆&#x27;,
+                    &#x27;vertical&#x27; : &#x27; &#x27;,
+                    &#x27;horizontal&#x27; : &#x27; &#x27;,
+                };
+                break;
+        }
+        var bars = this.options.bars;
+        this.getBoundaryChar = function(t, l, b, r){
+            if(t &#x26;&#x26; l &#x26;&#x26; b &#x26;&#x26; r) return bars.intersection;
+            //Ts
+            if(t &#x26;&#x26; l &#x26;&#x26; b) return bars.right_t;
+            if(t &#x26;&#x26; l &#x26;&#x26; r) return bars.bottom_t;
+            if(t &#x26;&#x26; b &#x26;&#x26; r) return bars.left_t;
+            if(l &#x26;&#x26; b &#x26;&#x26; r) return bars.top_t;
+
+            //Corners
+            if(l &#x26;&#x26; b) return bars.ur_corner;
+            if(t &#x26;&#x26; l) return bars.lr_corner;
+            if(t &#x26;&#x26; r) return bars.ll_corner;
+            if(b &#x26;&#x26; r) return bars.ul_corner;
+
+            //Straights
+            if(l &#x26;&#x26; r) return bars.horizontal;
+            if(t &#x26;&#x26; b) return bars.vertical;
+        }
+    }else{
+        if(!this.options.verticalBar) this.options.verticalBar = &#x27;|&#x27;;
+        if(!this.options.horizontalBar) this.options.horizontalBar = &#x27;-&#x27;;
+        if(!this.options.intersection) this.options.intersection = &#x27;+&#x27;;
+        this.getBoundaryChar = function(t, l, b, r){
+            var isVert = (t || b);
+            var isHoriz = (l || r);
+            if(isVert &#x26;&#x26; isHoriz){
+                return ob.options.intersection;
+            }else{
+                if(isVert) return ob.options.verticalBar;
+                if(isHoriz) return ob.options.horizontalBar;
+            }
+        }
+    }
+    this.headers = [];
+    this.data = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[
+    &#x27;intersection&#x27;, &#x27;horizontalBar&#x27;, &#x27;verticalBar&#x27;,
+    &#x27;dataStyle&#x27;, &#x27;headerStyle&#x27;, &#x27;bars&#x27;, &#x27;cellStyle&#x27;,
+    &#x27;borderColor&#x27;
+].forEach(function(opt){
+    opts[opt] = item[opt];
+})
+var table = new AsciiArt.<span class="apidocCodeKeywordSpan">Table</span>(opts);
+var fields = item.columns ||
+   Object.keys(item.data[0]||{});
+table.setHeading.apply(table, fields);
+table.data = item.data;
+var res = table.write(
+    item.width ||
+    (
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.setInstance" id="apidoc.element.ascii-art.Table.setInstance">
+        function <span class="apidocSignatureSpan">ascii-art.Table.</span>setInstance
+        <span class="apidocSignatureSpan">(art)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setInstance = function (art){
+    parentArt = art;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+//lazy load subreferences
+function proxyOnFirstReference(name){
+    Object.defineProperty(AsciiArt, name, {
+        get: function() {
+            result = get[name]()[name];
+            result.<span class="apidocCodeKeywordSpan">setInstance</span>(AsciiArt);
+            AsciiArt[name] = result;
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.Table.prototype" id="apidoc.module.ascii-art.Table.prototype">module ascii-art.Table.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.add" id="apidoc.element.ascii-art.Table.prototype.add">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>add
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (item){
+    this.data.push(item);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+AsciiArt.Table.prototype.addRow = function(){
+    var values = Array.prototype.slice.apply(arguments);
+    var ob = this;
+    var row = {};
+    values.forEach(function(value, index){
+        row[ob.headers[index].value] = value;
+    });
+    this.<span class="apidocCodeKeywordSpan">add</span>(row);
+}
+
+AsciiArt.Table.prototype.add = function(item){
+    this.data.push(item);
+}
+
+AsciiArt.Table.prototype.addColumn = function(options){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.addColumn" id="apidoc.element.ascii-art.Table.prototype.addColumn">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>addColumn
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addColumn = function (options){
+    if(typeof options == &#x27;string&#x27;) options = {
+        value : options,
+        label : options,
+    };
+    if(options.value &#x26;&#x26; !options.label) options.label = options.value;
+    this.headers.push(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.write(80);
+}
+
+AsciiArt.Table.prototype.setHeading = function(){
+    var headers = Array.prototype.slice.apply(arguments);
+    var ob = this;
+    headers.forEach(function(header){
+        ob.<span class="apidocCodeKeywordSpan">addColumn</span>(header);
+    });
+}
+
+AsciiArt.Table.prototype.addRow = function(){
+    var values = Array.prototype.slice.apply(arguments);
+    var ob = this;
+    var row = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.addRow" id="apidoc.element.ascii-art.Table.prototype.addRow">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>addRow
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addRow = function (){
+    var values = Array.prototype.slice.apply(arguments);
+    var ob = this;
+    var row = {};
+    values.forEach(function(value, index){
+        row[ob.headers[index].value] = value;
+    });
+    this.add(row);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.setHeading" id="apidoc.element.ascii-art.Table.prototype.setHeading">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>setHeading
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setHeading = function (){
+    var headers = Array.prototype.slice.apply(arguments);
+    var ob = this;
+    headers.forEach(function(header){
+        ob.addColumn(header);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.toString" id="apidoc.element.ascii-art.Table.prototype.toString">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (){
+    return this.write(80);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	    .blue (this._blue .get());
+	};
+
+	/**
+	 * @returns {String}
+	 */
+	Rgb.prototype.toHexString = function () {
+	  return this.toHex().<span class="apidocCodeKeywordSpan">toString</span>();
+	};
+
+	/**
+	 * @param {Number} value
+	 * @returns {Number}
+	 */
+	Rgb.prototype._preparePreXyzValue = function(value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.Table.prototype.write" id="apidoc.element.ascii-art.Table.prototype.write">
+        function <span class="apidocSignatureSpan">ascii-art.Table.prototype.</span>write
+        <span class="apidocSignatureSpan">(width)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (width){
+    var stats = columnStatistics(this.headers, this.data);
+    var sizes = columnSizes(width, stats, this);
+    var ob = this;
+    //RENDER!!!
+    var result = &#x27;&#x27;;
+    var y = true;
+    var n = false;
+    var fillerChar = &#x27;%&#x27;;
+    var horizontalRule = function(styleHandler, top, bottom){
+        var rule = &#x27;&#x27;;
+        var t = !top;
+        var b = !bottom;
+        ob.headers.forEach(function(header, index){
+            var f = index !== 0?true:false;
+            var c = ob.getBoundaryChar(t, f, b, y);
+            if(ob.options.borderColor) c = parentArt.style(
+                c, ob.options.borderColor, false
+            );
+            var line = c + padRTo(
+                &#x27;&#x27;, sizes[index], ob.getBoundaryChar(n, y, n, y)
+            );
+            if(styleHandler){
+                styleHandler(header, index, function(style){
+                    if(style){
+                        line = parentArt.style(line, style, true);
+                    }
+                });
+            }
+            rule += line;
+        });
+        var chr = ob.getBoundaryChar(t, y, b, n);
+        if(ob.options.borderColor) chr = parentArt.style(
+            chr, ob.options.borderColor, true
+        );
+        var pos = ob.headers.length-1;
+        if(styleHandler){
+            styleHandler(ob.headers[pos], pos, function(style){
+                var backgroundColor = bgFromStyle(style);
+                if(style){
+                    var s = style;
+                    var c = chr;
+                    if(backgroundColor &#x26;&#x26; !c.trim()){
+                        c = &#x27;X&#x27;;
+                        s = style+&#x27;+&#x27;+backgroundColor
+                    }
+                    rule += parentArt.style(c, s, true);
+                }else{
+                    rule += chr;
+                }
+            });
+        }else{
+            rule += chr;
+        }
+        rule += &#x22;\n&#x22;;
+        return rule;
+    }
+
+    var horizontalRuleStylerMaker = function(styleGetter){
+        return function(column, index, done){
+            var style = styleGetter(column, index);
+            var backgroundColor = bgFromStyle(style);
+            if(backgroundColor) done(backgroundColor+&#x27;_bg&#x27;);
+            else done();
+        }
+    }
+    if(ob.options.drawRules !== false){
+        result += horizontalRule(horizontalRuleStylerMaker(function(header, i, row){
+            return (header &#x26;&#x26; (
+                header.headerStyle ||
+                ob.options.headerStyle ||
+                header.style
+            ));
+        }), true);
+    }
+    var lastBG;
+    var vb = ob.getBoundaryChar(y, n, y, n);
+    ob.headers.forEach(function(header, index){
+        var line = vb;
+        if(ob.options.borderColor) line = parentArt.style(
+            line, ob.options.borderColor, true
+        );
+        var value = header.label;
+        var backgroundColor;
+        var style = header.headerStyle ||
+            ob.options.headerStyle ||
+            header.style ||
+            ob.options.cellStyle;
+        if(style){
+            backgroundColor = bgFromStyle(style);
+            value = parentArt.style(value, style, true);
+            if(backgroundColor)
+                line = parentArt.style(line, backgroundColor+&#x27;_bg&#x27;, true);
+        }
+        var length = ansiAwareLength(value);
+        if(length &#x3e; sizes[index]){
+            line += ansiAwareTrimTo(value, sizes[index]);
+        }else{
+            line += padR(
+                value,
+                sizes[index] - length,
+                backgroundColor?parentArt.style(
+                    &#x27;.&#x27;, style+&#x27;+&#x27;+backgroundColor, true
+                ):&#x27; &#x27;
+            );
+        }
+        result += line;
+        lastBG = backgroundColor;
+    });
+    if(!lastBG){
+        if(ob.options.borderColor){
+            result += parentArt.style(
+                vb, ob.options.borderColor, true
+            )+&#x22;\n&#x22;;;
+        }else{
+            result += vb+&#x22;\n&#x22;;
+        }
+    }else{
+        var c = vb;
+        if(ob.options.borderColor) c = parentArt.style(
+            c, ob.options.borderColor, true
+        );
+        result += parentArt.style(c, lastBG+&#x27;_bg&#x27;, true ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            result, item.text, item
+        );
+        if(overlaid) result = overlaid;
+        done();
+    }, 1);
+   break;
+case &#x27;font&#x27;:
+    AsciiArt.Figlet.<span class="apidocCodeKeywordSpan">write</span>(item.text, item.font, function(text){
+        result = safeCombine(result, text, item.style);
+        done();
+    });
+    break;
+case &#x27;table&#x27;:
+    setTimeout(function(){
+        var opts = {};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.average" id="apidoc.module.ascii-art.average">module ascii-art.average</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.average.render" id="apidoc.element.ascii-art.average.render">
+        function <span class="apidocSignatureSpan">ascii-art.average.</span>render
+        <span class="apidocSignatureSpan">(image, utils, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function (image, utils, callback){
+    try{
+        var width = image.options.width;
+        var height = image.options.height;
+        var distortion = 0.5;
+        height = Math.floor(image.options.height*distortion);
+        var newImage = utils.imageFromCanvas(image.canvas);
+        var canvas = utils.canvas(width, height);
+
+        var context = canvas.getContext(&#x27;2d&#x27;);
+        context.drawImage(
+            newImage, 0, 0,
+            width, height
+        );
+        var data = context.getImageData(
+            0, 0,
+            width, height
+        ).data;
+        var result = &#x27;&#x27;;
+        var currentColor;
+        for(var y=0; y &#x3c; height; y++){
+            for(var x=0; x &#x3c; width; x++){
+                var offset = y * width * 4 + x * 4;
+                var color = AsciiArt.Image.getTerminalColor(
+                    data[offset],
+                    data[offset+1],
+                    data[offset+2],
+                    image.options
+                );
+                var fraction = getValue(
+                    data[offset],
+                    data[offset+1],
+                    data[offset+2]
+                )/255;
+                var charPosition = Math.floor(image.options.alphabet.length*fraction);
+                result += AsciiArt.Ansi.Codes( (image.options.alphabet[charPosition] || &#x27; &#x27;), color || &#x27;off&#x27; , true);
+                //result += (image.options.alphabet[charPosition] || &#x27; &#x27;);
+            }
+            result += &#x22;\n&#x22;;
+            currentColor = undefined;
+        }
+    }catch(ex){
+        if(callback) callback(ex);
+    }
+    if(callback) callback(undefined, result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    location = undefined;
+}
+var ob = this;
+this.ready(function(){
+    if(location &#x26;&#x26; location.indexOf(&#x27;://&#x27;) !== -1){
+        throw new Error(&#x22;uris not yet implemented!&#x22;)
+    }else{
+        AsciiArt.Image.renderers[ob.options.renderer].<span class="apidocCodeKeywordSpan">render</span>(
+            ob,
+            {
+                imageFromCanvas : function(canvas){
+                    var newImage = new Image();
+                    if(canvas.toBuffer) newImage.src = canvas.toBuffer();
+                    else newImage.src = canvas.toDataURL();
+                    return newImage;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.average.setInstance" id="apidoc.element.ascii-art.average.setInstance">
+        function <span class="apidocSignatureSpan">ascii-art.average.</span>setInstance
+        <span class="apidocSignatureSpan">(instance)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setInstance = function (instance){
+    AsciiArt = instance;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+//lazy load subreferences
+function proxyOnFirstReference(name){
+    Object.defineProperty(AsciiArt, name, {
+        get: function() {
+            result = get[name]()[name];
+            result.<span class="apidocCodeKeywordSpan">setInstance</span>(AsciiArt);
+            AsciiArt[name] = result;
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.kaolin" id="apidoc.module.ascii-art.kaolin">module ascii-art.kaolin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.kaolin" id="apidoc.element.ascii-art.kaolin.kaolin">
+        function <span class="apidocSignatureSpan">ascii-art.</span>kaolin
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kaolin = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgBlack" id="apidoc.element.ascii-art.kaolin.bgBlack">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgBlack
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgBlack = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgBlue" id="apidoc.element.ascii-art.kaolin.bgBlue">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgBlue
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgBlue = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgCyan" id="apidoc.element.ascii-art.kaolin.bgCyan">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgCyan
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgCyan = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgGreen" id="apidoc.element.ascii-art.kaolin.bgGreen">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgGreen
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgGreen = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgMagenta" id="apidoc.element.ascii-art.kaolin.bgMagenta">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgMagenta
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgMagenta = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgRed" id="apidoc.element.ascii-art.kaolin.bgRed">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgRed
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgRed = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgWhite" id="apidoc.element.ascii-art.kaolin.bgWhite">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgWhite
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgWhite = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bgYellow" id="apidoc.element.ascii-art.kaolin.bgYellow">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bgYellow
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgYellow = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.black" id="apidoc.element.ascii-art.kaolin.black">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>black
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">black = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.blue" id="apidoc.element.ascii-art.kaolin.blue">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>blue
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blue = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	  return parseInt(hex, 16);
+	};
+
+	/**
+	 * @returns {String}
+	 */
+	HexRgb.prototype.toString = function() {
+	  return &#x27;#&#x27; + this._formatIntAsHex(this.red()) + this._formatIntAsHex(this.green()) + this._formatIntAsHex(this.<span
+ class="apidocCodeKeywordSpan">blue</span>());
+	};
+
+	/**
+	 * @param {Number} intValue
+	 * @returns {String}
+	 */
+	HexRgb.prototype._formatIntAsHex = function(intValue) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.bold" id="apidoc.element.ascii-art.kaolin.bold">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>bold
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bold = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.cyan" id="apidoc.element.ascii-art.kaolin.cyan">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>cyan
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cyan = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.dim" id="apidoc.element.ascii-art.kaolin.dim">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>dim
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dim = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.gray" id="apidoc.element.ascii-art.kaolin.gray">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>gray
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gray = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.green" id="apidoc.element.ascii-art.kaolin.green">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>green
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">green = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	/**
+	 * @returns {HexRgb}
+	 */
+	Rgb.prototype.toHex = function () {
+	  var HexRgb = __webpack_require__(13);
+	  return new HexRgb()
+	    .red  (this._red  .get())
+	    .<span class="apidocCodeKeywordSpan">green</span>(this._green.get())
+	    .blue (this._blue .get());
+	};
+
+	/**
+	 * @returns {String}
+	 */
+	Rgb.prototype.toHexString = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.grey" id="apidoc.element.ascii-art.kaolin.grey">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>grey
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grey = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.hidden" id="apidoc.element.ascii-art.kaolin.hidden">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>hidden
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hidden = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.inverse" id="apidoc.element.ascii-art.kaolin.inverse">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>inverse
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inverse = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.italic" id="apidoc.element.ascii-art.kaolin.italic">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>italic
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">italic = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.magenta" id="apidoc.element.ascii-art.kaolin.magenta">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>magenta
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">magenta = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.red" id="apidoc.element.ascii-art.kaolin.red">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>red
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">red = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	  return parseInt(hex, 16);
+	};
+
+	/**
+	 * @returns {String}
+	 */
+	HexRgb.prototype.toString = function() {
+	  return &#x27;#&#x27; + this._formatIntAsHex(this.<span class="apidocCodeKeywordSpan">red</span>()) + this._formatIntAsHex(this
+.green()) + this._formatIntAsHex(this.blue());
+	};
+
+	/**
+	 * @param {Number} intValue
+	 * @returns {String}
+	 */
+	HexRgb.prototype._formatIntAsHex = function(intValue) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.reset" id="apidoc.element.ascii-art.kaolin.reset">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>reset
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.strikethrough" id="apidoc.element.ascii-art.kaolin.strikethrough">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>strikethrough
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strikethrough = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.underline" id="apidoc.element.ascii-art.kaolin.underline">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>underline
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">underline = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.white" id="apidoc.element.ascii-art.kaolin.white">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>white
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">white = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.kaolin.yellow" id="apidoc.element.ascii-art.kaolin.yellow">
+        function <span class="apidocSignatureSpan">ascii-art.kaolin.</span>yellow
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yellow = function (arg){
+    stack.push(key);
+    var text = arguments.length === 1?arg+&#x27;&#x27;:Array.prototype.slice.apply(arguments, [0]).join(&#x27; &#x27;);
+    if(arr.length == 1 &#x26;&#x26; arr.indexOf(&#x27;reset&#x27;) !== -1) return &#x27;\u001b[0m&#x27;+text+&#x27;\u001b[0m&#x27;;
+    if(!text) return text;
+    // in a radical depature from convention, ascii-art only uses openers and resets
+    // the result is more uniform output (especially on graphics)
+    // we implement closers here for symmetry with chalk / colors.js
+    var result = art.style(text, arr.join(&#x27;+&#x27;))+makeClosers(arr);
+    var parents = stack.slice(0);
+    var index;
+    while(result.indexOf(defaultMarker) !== -1 &#x26;&#x26; parents.length &#x26;&#x26; result.indexOf(defaultMarker) !== result.lastIndexOf(defaultMarker
+)){
+        var env = map[parents.pop()];
+        var marker = art.style(&#x27;&#x27;, env);
+        var index = result.indexOf(defaultMarker);
+        if(index !== -1){
+            result = result.slice(0, index)+marker+result.slice(index+defaultMarker.length);
+        }
+    }
+    if(result.indexOf(&#x22;\n&#x22;) !== -1){
+        result = result.replace(&#x22;\n&#x22;, defaultMarker+&#x22;\n&#x22;+&#x27;\u001b[90m&#x27;)
+    }
+    stack.pop(key);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ascii-art.table" id="apidoc.module.ascii-art.table">module ascii-art.table</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ascii-art.table.Table" id="apidoc.element.ascii-art.table.Table">
+        function <span class="apidocSignatureSpan">ascii-art.table.</span>Table
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Table = function (options){
+    this.options = options || {};
+    var ob = this;
+    if(this.options.bars){
+        if(this.options.bars === true) this.options.bars = &#x27;single&#x27;;
+        if(typeof this.options.bars == &#x27;string&#x27;) switch(this.options.bars){
+            case &#x27;single&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;┏&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;┓&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;┛&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;┗&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;┻&#x27;,
+                    &#x27;top_t&#x27; : &#x27;┳&#x27;,
+                    &#x27;right_t&#x27; : &#x27;┫&#x27;,
+                    &#x27;left_t&#x27; : &#x27;┣&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╋&#x27;,
+                    &#x27;vertical&#x27; : &#x27;┃&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;━&#x27;,
+                };
+                break;
+            case &#x27;double&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;╔&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;╗&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;╝&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;╚&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;╩&#x27;,
+                    &#x27;top_t&#x27; : &#x27;╦&#x27;,
+                    &#x27;right_t&#x27; : &#x27;╣&#x27;,
+                    &#x27;left_t&#x27; : &#x27;╠&#x27;,
+                    &#x27;intersection&#x27; : &#x27;╬&#x27;,
+                    &#x27;vertical&#x27; : &#x27;║&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;═&#x27;,
+                };
+                break;
+            case &#x27;block&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;█&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;█&#x27;,
+                    &#x27;top_t&#x27; : &#x27;█&#x27;,
+                    &#x27;right_t&#x27; : &#x27;█&#x27;,
+                    &#x27;left_t&#x27; : &#x27;█&#x27;,
+                    &#x27;intersection&#x27; : &#x27;█&#x27;,
+                    &#x27;vertical&#x27; : &#x27;█&#x27;,
+                    &#x27;horizontal&#x27; : &#x27;█&#x27;,
+                };
+                break;
+            case &#x27;angles&#x27;:
+                this.options.bars = {
+                    &#x27;ul_corner&#x27; : &#x27;◤&#x27;,
+                    &#x27;ur_corner&#x27; : &#x27;◥&#x27;,
+                    &#x27;lr_corner&#x27; : &#x27;◢&#x27;,
+                    &#x27;ll_corner&#x27; : &#x27;◣&#x27;,
+                    &#x27;bottom_t&#x27; : &#x27;▲&#x27;,
+                    &#x27;top_t&#x27; : &#x27;▼&#x27;,
+                    &#x27;right_t&#x27; : &#x27;◀&#x27;,
+                    &#x27;left_t&#x27; : &#x27;▶&#x27;,
+                    &#x27;intersection&#x27; : &#x27;◆&#x27;,
+                    &#x27;vertical&#x27; : &#x27; &#x27;,
+                    &#x27;horizontal&#x27; : &#x27; &#x27;,
+                };
+                break;
+        }
+        var bars = this.options.bars;
+        this.getBoundaryChar = function(t, l, b, r){
+            if(t &#x26;&#x26; l &#x26;&#x26; b &#x26;&#x26; r) return bars.intersection;
+            //Ts
+            if(t &#x26;&#x26; l &#x26;&#x26; b) return bars.right_t;
+            if(t &#x26;&#x26; l &#x26;&#x26; r) return bars.bottom_t;
+            if(t &#x26;&#x26; b &#x26;&#x26; r) return bars.left_t;
+            if(l &#x26;&#x26; b &#x26;&#x26; r) return bars.top_t;
+
+            //Corners
+            if(l &#x26;&#x26; b) return bars.ur_corner;
+            if(t &#x26;&#x26; l) return bars.lr_corner;
+            if(t &#x26;&#x26; r) return bars.ll_corner;
+            if(b &#x26;&#x26; r) return bars.ul_corner;
+
+            //Straights
+            if(l &#x26;&#x26; r) return bars.horizontal;
+            if(t &#x26;&#x26; b) return bars.vertical;
+        }
+    }else{
+        if(!this.options.verticalBar) this.options.verticalBar = &#x27;|&#x27;;
+        if(!this.options.horizontalBar) this.options.horizontalBar = &#x27;-&#x27;;
+        if(!this.options.intersection) this.options.intersection = &#x27;+&#x27;;
+        this.getBoundaryChar = function(t, l, b, r){
+            var isVert = (t || b);
+            var isHoriz = (l || r);
+            if(isVert &#x26;&#x26; isHoriz){
+                return ob.options.intersection;
+            }else{
+                if(isVert) return ob.options.verticalBar;
+                if(isHoriz) return ob.options.horizontalBar;
+            }
+        }
+    }
+    this.headers = [];
+    this.data = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[
+    &#x27;intersection&#x27;, &#x27;horizontalBar&#x27;, &#x27;verticalBar&#x27;,
+    &#x27;dataStyle&#x27;, &#x27;headerStyle&#x27;, &#x27;bars&#x27;, &#x27;cellStyle&#x27;,
+    &#x27;borderColor&#x27;
+].forEach(function(opt){
+    opts[opt] = item[opt];
+})
+var table = new AsciiArt.<span class="apidocCodeKeywordSpan">Table</span>(opts);
+var fields = item.columns ||
+   Object.keys(item.data[0]||{});
+table.setHeading.apply(table, fields);
+table.data = item.data;
+var res = table.write(
+    item.width ||
+    (
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
