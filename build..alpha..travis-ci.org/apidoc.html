@@ -878,21 +878,21 @@ var res = table.write(
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Artwork
--------
+            console.log(final);
+        });
+    });
+});
+});*/
 
-fetch a graphic from a remote source and append it to the current buffer.
-
-| In your code                                    |         In the Terminal                           |
-|-------------------------------------------------|---------------------------------------------------|
-| `.<span class="apidocCodeKeywordSpan">artwork</span>(options[, callback])`                 | ascii-art art [source][/path]            |
-
-Often I use this in conjunction with an image backdrop, for example to superimpose bones on the earth:
-
-![Mixed Content Example](http://patternweaver.com/Github/Ascii/docs/bones_earth.png)
-
-
-Compositing
+/*
+art.<span class="apidocCodeKeywordSpan">artwork</span>({
+artwork:&#x27;textfiles.com/art/st-char.asc&#x27;
+}).lines(31, 45, function(rendered){
+//cleanup non-unix terminators
+rendered = rendered.replace(/\r/g, &#x27;&#x27;);
+rendered = colorInBonesShirt(rendered);
+art.image({
+    filepath :&#x27;/Volumes/Sparrows/Abbey/Professional/Project\ Resources/Stock\ photos/earth_in_space.jpg&#x27;,
 ...</pre></li>
     </ul>
 
@@ -921,23 +921,21 @@ Compositing
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Fonts
------
-
-Render a string using a figlet font and add that to the buffer. There is a batch version of this function which does not chain and
- takes an array( `.strings()`).
-
-| In your code                                    |         In the Terminal                           |
-|-------------------------------------------------|---------------------------------------------------|
-| `.<span class="apidocCodeKeywordSpan">font</span>(text, font[, style][, callback])`    | `ascii-art text -F &#x3c;font&#x3e; &#
-x22;Demo!&#x22;`             |
-
-Outputs
-
-	______                          _
-	|  _  \                        | |
-	| | | |  ___  _ __ ___    ___  | |
-	| | | | / _ \| &#x27;_ ` _ \  / _ \ | |
+AsciiArt.font = function(str, fontName, style, callback){
+    if(typeof style == &#x27;function&#x27; &#x26;&#x26; !callback){
+        callback = style;
+        style = undefined;
+    }
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.<span class="apidocCodeKeywordSpan">font</span>(str, fontName, style);
+    }else{
+        return AsciiArt.Figlet.write(str, fontName, function(text){
+            if(style) text = AsciiArt.Ansi.Codes(text, style, true);
+            callback(text);
+        });
+    }
+}
 ...</pre></li>
     </ul>
 
@@ -962,21 +960,21 @@ Outputs
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Installation
-------------
+        });
+    }
+}
 
-	npm install ascii-art
-
-If you&#x27;d like to use the command-line tool make sure to use `-g`
-
-If you want to use `.<span class="apidocCodeKeywordSpan">image</span>()` or `.Image` you must install [`canvas`](https://www.npmjs
-.com/package/canvas) and if you want to run the chalk tests... you&#x27;ll need to to install `require-uncached` as well.
-
-
-Styles
-------
-
-Add ANSI styles to a string and return the result.
+AsciiArt.image = function(options, callback){
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.<span class="apidocCodeKeywordSpan">image</span>(options);
+    }else{
+        var image = new AsciiArt.Image(options);
+        image.write(function(err, text){
+            callback(text);
+        });
+    }
+}
 ...</pre></li>
     </ul>
 
@@ -1044,23 +1042,21 @@ Add ANSI styles to a string and return the result.
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-| white   |![color](Images/c/gray.png)|![color](Images/c/light_gray.png)|![color](Images/c/gray.png)|![color](Images/c/light_gray
-.png)|
-
-For example: if I wanted underlined blue text on a white background, my style would be `underlined+blue+white_bg`. Check out the
- detailed [style docs](docs/Styles.md) for more information.
-
-Fonts
------
-
-Render a string using a figlet font and add that to the buffer. There is a batch version of this function which does not chain and
- takes an array( `.<span class="apidocCodeKeywordSpan">strings</span>()`).
-
-| In your code                                    |         In the Terminal                           |
-|-------------------------------------------------|---------------------------------------------------|
-| `.font(text, font[, style][, callback])`    | `ascii-art text -F &#x3c;font&#x3e; &#x22;Demo!&#x22;`             |
-
-Outputs
+    {text: &#x27;.With.Bobby.&#x22;The.Brain&#x22;&#x27;},
+    {text: &#x27;.Heenan.&#x27;}
+],
+verticalBar : &#x27; &#x27;,
+horizontalBar : &#x27; &#x27;,
+intersection : &#x27; &#x27;
+}).lines(2, function(table){
+art.<span class="apidocCodeKeywordSpan">strings</span>([
+    &#x27;ANDRE&#x27;,
+    &#x27;the&#x27;,
+    &#x27;GIANT&#x27;,
+    &#x27;POSSE&#x27;,
+    &#x27;7\&#x27;4&#x22;&#x27;,
+    &#x27;520 LB&#x27;
+], &#x27;rusted&#x27;, function(andre, the, giant, posse, height, weight){
 ...</pre></li>
     </ul>
 
@@ -1085,29 +1081,21 @@ Outputs
     return ansi_str;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Styles
-------
-
-Add ANSI styles to a string and return the result.
-
-| In your code                                    |         In the Terminal                           |
-|-------------------------------------------------|---------------------------------------------------|
-| `.<span class="apidocCodeKeywordSpan">style</span>(text, style[, close]) &#x3e; String`          | `ascii-art text -s green &#
-x22;some text&#x22;`             |
-
-Styles are: *italic*, **bold**, &#x3c;span style=&#x22;text-decoration: underline&#x22;&#x3e;underline&#x3c;/span&#x3e;, &#x3c;span
- style=&#x22;text-decoration: underline overline&#x22;&#x3e;|framed|&#x3c;/span&#x3e;, &#x3c;span style=&#x22;text-decoration: underline
- overline&#x22;&#x3e;|encircled|&#x3c;/span&#x3e;, &#x3c;span style=&#x22;text-decoration: overline&#x22;&#x3e;overline&#x3c;/span
-&#x3e;, &#x3c;span style=&#x22;text-decoration: blink&#x22;&#x3e;blink&#x3c;/span&#x3e; and &#x3c;span style=&#x22;display:inline
--block; background-color:#777777; color: white&#x22;&#x3e;&#x26;nbsp;inverse&#x26;nbsp;&#x3c;/span&#x3e;. And available colors are
-:
-
-| **Color Table**  | `color`       | bright_`color`  | `color`_bg| bright_`color`_bg|
-| -----------------|---------------|-----------------|-----------|------------------|
-| black   |![color](Images/c/black.png)|![color](Images/c/light_black.png)|![color](Images/c/black.png)|![color](Images/c/light_black
-.png)|
-| red     |![color](Images/c/red.png)|![color](Images/c/light_red.png)|![color](Images/c/red.png)|![color](Images/c/light_red.png
-)|
+        row &#x3e;= y &#x26;&#x26;
+        //x in-range
+        column &#x3e;= x &#x26;&#x26;
+        column &#x3c;= x + lines[row-y].length
+    ){
+        if(lines[row-y][column-x-1] === undefined) return;
+        if(options.transparent &#x26;&#x26; lines[row-y][column-x-1] === &#x27; &#x27;) return;
+        if(options.style) return AsciiArt.<span class="apidocCodeKeywordSpan">style</span>(
+            AsciiArt.Ansi.charAt(lines[row-y], column-x)
+        , options.style);
+        else return AsciiArt.Ansi.charAt(lines[row-y], column-x)
+    }
+});
+if(options.chroma){
+    str = str.replace(new RegExp(options.chroma, &#x27;g&#x27;), &#x27; &#x27;);
 ...</pre></li>
     </ul>
 
@@ -1149,21 +1137,21 @@ Styles are: *italic*, **bold**, &#x3c;span style=&#x22;text-decoration: underlin
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Tables
-------
+        });
+    }
+} //*/
 
-Generate a table from the passed data, with support for many styles and append that to the buffer
-
-| In your code                                    |         In the Terminal                           |
-|-------------------------------------------------|---------------------------------------------------|
-| `.<span class="apidocCodeKeywordSpan">table</span>(options[, callback])`                   | N/A             |
-
-![Styled Table Example](http://patternweaver.com/Github/Ascii/docs/ansi_table.png)
-
-Check out the [documentation](docs/Tables.md) for more examples!
-
-Artwork
--------
+AsciiArt.table = function(options, callback){
+    if(!callback){
+        var chain = fontChain.apply({});
+        return chain.<span class="apidocCodeKeywordSpan">table</span>(options);
+    }else{
+        var opts = {};
+        [
+            &#x27;intersection&#x27;, &#x27;horizontalBar&#x27;, &#x27;verticalBar&#x27;,
+            &#x27;dataStyle&#x27;, &#x27;headerStyle&#x27;, &#x27;bars&#x27;, &#x27;cellStyle&#x27;,
+            &#x27;borderColor&#x27;
+        ].forEach(function(opt){
 ...</pre></li>
     </ul>
 
@@ -2505,7 +2493,26 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	it(&#x27;should support applying multiple styles at once&#x27;, function () {
+		assert.equal(chalk.red.bgGreen.underline(&#x27;foo&#x27;), &#x27;\u001b[31m\u001b[42m\u001b[4mfoo\u001b[24m\u001b[49m\u001b[39m
+&#x27;);
+		assert.equal(chalk.underline.red.bgGreen(&#x27;foo&#x27;), &#x27;\u001b[4m\u001b[31m\u001b[42mfoo\u001b[49m\u001b[39m\u001b[24m
+&#x27;);
+	});
+
+	it(&#x27;should support nesting styles&#x27;, function () {
+		assert.equal(
+			chalk.red(&#x27;foo&#x27; + chalk.underline.<span class="apidocCodeKeywordSpan">bgBlue</span>(&#x27;bar&#x27;) + &#x27;!&#x27
+;),
+			&#x27;\u001b[31mfoo\u001b[4m\u001b[44mbar\u001b[49m\u001b[24m!\u001b[39m&#x27;
+		);
+	});
+
+	it(&#x27;should support nesting styles of the same type (color, underline, bg)&#x27;, function () {
+		assert.equal(
+			chalk.red(&#x27;a&#x27; + chalk.yellow(&#x27;b&#x27; + chalk.green(&#x27;c&#x27;) + &#x27;b&#x27;) + &#x27;c&#x27;),
+...</pre></li>
     </ul>
 
 
@@ -2581,7 +2588,24 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		assert.equal(chalk.underline(&#x27;foo&#x27;), &#x27;\u001b[4mfoo\u001b[24m&#x27;);
+		assert.equal(chalk.red(&#x27;foo&#x27;), &#x27;\u001b[31mfoo\u001b[39m&#x27;);
+		assert.equal(chalk.bgRed(&#x27;foo&#x27;), &#x27;\u001b[41mfoo\u001b[49m&#x27;);
+	});
+
+	it(&#x27;should support applying multiple styles at once&#x27;, function () {
+		assert.equal(chalk.red.bgGreen.underline(&#x27;foo&#x27;), &#x27;\u001b[31m\u001b[42m\u001b[4mfoo\u001b[24m\u001b[49m\u001b[39m
+&#x27;);
+		assert.equal(chalk.underline.red.<span class="apidocCodeKeywordSpan">bgGreen</span>(&#x27;foo&#x27;), &#x27;\u001b[4m\u001b[31m\u001b[42mfoo\u001b[49m\u001b[39m\u001b[24m&#x27;);
+	});
+
+	it(&#x27;should support nesting styles&#x27;, function () {
+		assert.equal(
+			chalk.red(&#x27;foo&#x27; + chalk.underline.bgBlue(&#x27;bar&#x27;) + &#x27;!&#x27;),
+			&#x27;\u001b[31mfoo\u001b[4m\u001b[44mbar\u001b[49m\u001b[24m!\u001b[39m&#x27;
+		);
+...</pre></li>
     </ul>
 
 
@@ -2657,7 +2681,24 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var semver = require(&#x27;semver&#x27;);
+var chalk = require(&#x27;../../kaolin&#x27;);
+
+describe(&#x27;chalk&#x27;, function () {
+	it(&#x27;should style string&#x27;, function () {
+		assert.equal(chalk.underline(&#x27;foo&#x27;), &#x27;\u001b[4mfoo\u001b[24m&#x27;);
+		assert.equal(chalk.red(&#x27;foo&#x27;), &#x27;\u001b[31mfoo\u001b[39m&#x27;);
+		assert.equal(chalk.<span class="apidocCodeKeywordSpan">bgRed</span>(&#x27;foo&#x27;), &#x27;\u001b[41mfoo\u001b[49m&#x27;);
+	});
+
+	it(&#x27;should support applying multiple styles at once&#x27;, function () {
+		assert.equal(chalk.red.bgGreen.underline(&#x27;foo&#x27;), &#x27;\u001b[31m\u001b[42m\u001b[4mfoo\u001b[24m\u001b[49m\u001b[39m
+&#x27;);
+		assert.equal(chalk.underline.red.bgGreen(&#x27;foo&#x27;), &#x27;\u001b[4m\u001b[31m\u001b[42mfoo\u001b[49m\u001b[39m\u001b[24m
+&#x27;);
+	});
+...</pre></li>
     </ul>
 
 
@@ -2771,7 +2812,23 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	it(&#x27;should support falsy values&#x27;, function () {
+		assert.equal(chalk.red(0), &#x27;\u001b[31m0\u001b[39m&#x27;);
+	});
+
+	it(&#x27;shouldn\&#x27;t output escape codes if the input is empty&#x27;, function () {
+		assert.equal(chalk.red(), &#x27;&#x27;);
+		assert.equal(chalk.red.blue.<span class="apidocCodeKeywordSpan">black</span>(), &#x27;&#x27;);
+	});
+
+	it(&#x27;should keep Function.prototype methods&#x27;, function () {
+		assert.equal(chalk.grey.apply(null, [&#x27;foo&#x27;]), &#x27;\u001b[90mfoo\u001b[39m&#x27;);
+		assert.equal(chalk.reset(chalk.red.bgGreen.underline.bind(null)(&#x27;foo&#x27;) + &#x27;foo&#x27;), &#x27;\u001b[0m\u001b[31m\u001b[42m\u001b[4mfoo\u001b[24m\u001b[49m\u001b[39mfoo\u001b[0m&#x27;);
+		assert.equal(chalk.red.blue.black.call(null), &#x27;&#x27;);
+	});
+...</pre></li>
     </ul>
 
 
@@ -3070,7 +3127,23 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		assert.notEqual(red(&#x27;foo&#x27;), green(&#x27;foo&#x27;));
+		assert.notEqual(redBold(&#x27;bar&#x27;), greenBold(&#x27;bar&#x27;));
+		assert.notEqual(green(&#x27;baz&#x27;), greenBold(&#x27;baz&#x27;));
+	});
+
+	it(&#x27;should alias gray to grey&#x27;, function () {
+		assert.equal(chalk.<span class="apidocCodeKeywordSpan">grey</span>(&#x27;foo&#x27;), &#x27;\u001b[90mfoo\u001b[39m&#x27;);
+	});
+
+	it(&#x27;should support variable number of arguments&#x27;, function () {
+		assert.equal(chalk.red(&#x27;foo&#x27;, &#x27;bar&#x27;), &#x27;\u001b[31mfoo bar\u001b[39m&#x27;);
+	});
+
+	it(&#x27;should support falsy values&#x27;, function () {
+...</pre></li>
     </ul>
 
 
@@ -3315,7 +3388,24 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	it(&#x27;should support nesting styles of the same type (color, underline, bg)&#x27;, function () {
+		assert.equal(
+			chalk.red(&#x27;a&#x27; + chalk.yellow(&#x27;b&#x27; + chalk.green(&#x27;c&#x27;) + &#x27;b&#x27;) + &#x27;c&#x27;),
+			&#x27;\u001b[31ma\u001b[33mb\u001b[32mc\u001b[33mb\u001b[31mc\u001b[39m&#x27;
+		);
+	});
+
+	it(&#x27;should reset all styles with `.<span class="apidocCodeKeywordSpan">reset</span>()`&#x27;, function () {
+		assert.equal(chalk.reset(chalk.red.bgGreen.underline(&#x27;foo&#x27;) + &#x27;foo&#x27;), &#x27;\u001b[0m\u001b[31m\u001b[42m\
+u001b[4mfoo\u001b[24m\u001b[49m\u001b[39mfoo\u001b[0m&#x27;);
+	});
+
+	it(&#x27;should be able to cache multiple styles&#x27;, function () {
+		var red = chalk.red;
+		var green = chalk.green;
+		var redBold = red.bold;
+...</pre></li>
     </ul>
 
 
@@ -3391,7 +3481,25 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var requireUncached = require(&#x27;require-uncached&#x27;);
+var resolveFrom = require(&#x27;resolve-from&#x27;);
+var semver = require(&#x27;semver&#x27;);
+var chalk = require(&#x27;../../kaolin&#x27;);
+
+describe(&#x27;chalk&#x27;, function () {
+	it(&#x27;should style string&#x27;, function () {
+		assert.equal(chalk.<span class="apidocCodeKeywordSpan">underline</span>(&#x27;foo&#x27;), &#x27;\u001b[4mfoo\u001b[24m&#x27;);
+		assert.equal(chalk.red(&#x27;foo&#x27;), &#x27;\u001b[31mfoo\u001b[39m&#x27;);
+		assert.equal(chalk.bgRed(&#x27;foo&#x27;), &#x27;\u001b[41mfoo\u001b[49m&#x27;);
+	});
+
+	it(&#x27;should support applying multiple styles at once&#x27;, function () {
+		assert.equal(chalk.red.bgGreen.underline(&#x27;foo&#x27;), &#x27;\u001b[31m\u001b[42m\u001b[4mfoo\u001b[24m\u001b[49m\u001b[39m
+&#x27;);
+		assert.equal(chalk.underline.red.bgGreen(&#x27;foo&#x27;), &#x27;\u001b[4m\u001b[31m\u001b[42mfoo\u001b[49m\u001b[39m\u001b[24m
+&#x27;);
+...</pre></li>
     </ul>
 
 
@@ -3467,7 +3575,25 @@ function proxyOnFirstReference(name){
     stack.pop(key);
     return result;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			chalk.red(&#x27;foo&#x27; + chalk.underline.bgBlue(&#x27;bar&#x27;) + &#x27;!&#x27;),
+			&#x27;\u001b[31mfoo\u001b[4m\u001b[44mbar\u001b[49m\u001b[24m!\u001b[39m&#x27;
+		);
+	});
+
+	it(&#x27;should support nesting styles of the same type (color, underline, bg)&#x27;, function () {
+		assert.equal(
+			chalk.red(&#x27;a&#x27; + chalk.<span class="apidocCodeKeywordSpan">yellow</span>(&#x27;b&#x27; + chalk.green(&#x27;c&#x27;) + &#
+x27;b&#x27;) + &#x27;c&#x27;),
+			&#x27;\u001b[31ma\u001b[33mb\u001b[32mc\u001b[33mb\u001b[31mc\u001b[39m&#x27;
+		);
+	});
+
+	it(&#x27;should reset all styles with `.reset()`&#x27;, function () {
+		assert.equal(chalk.reset(chalk.red.bgGreen.underline(&#x27;foo&#x27;) + &#x27;foo&#x27;), &#x27;\u001b[0m\u001b[31m\u001b[42m\
+u001b[4mfoo\u001b[24m\u001b[49m\u001b[39mfoo\u001b[0m&#x27;);
+	});
+...</pre></li>
     </ul>
 
 
