@@ -1,6 +1,6 @@
 # npmdoc-ascii-art
 
-#### api documentation for  [ascii-art (v1.4.2)](https://github.com/khrome/ascii-art)  [![npm package](https://img.shields.io/npm/v/npmdoc-ascii-art.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ascii-art) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ascii-art.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ascii-art)
+#### basic api documentation for  [ascii-art (v1.4.2)](https://github.com/khrome/ascii-art)  [![npm package](https://img.shields.io/npm/v/npmdoc-ascii-art.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ascii-art) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ascii-art.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ascii-art)
 
 #### Ansi codes, figlet fonts, and ascii art. 100% JS
 
